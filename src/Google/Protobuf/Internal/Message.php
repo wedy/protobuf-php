@@ -1589,7 +1589,7 @@ class Message
         } else {
             // we want to emit default value
             // return $values !== $this->defaultValue($field);
-            return false;
+            return true;
         }
     }
 
