@@ -1761,7 +1761,9 @@ class Message
                 $size += 2;  // size for \"\"
                 break;
             case GPBType::MESSAGE:
-                $size += $value->jsonByteSize();
+                if ($value) {
+                    $size += $value->jsonByteSize();
+                }
                 break;
 #             case GPBType::GROUP:
 #                 // TODO(teboring): Add support.

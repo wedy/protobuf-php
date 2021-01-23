@@ -234,7 +234,9 @@ class GPBJsonWire
             //      trigger_error("Not implemented.", E_ERROR);
             //      break;
             case GPBType::MESSAGE:
-                $value->serializeToJsonStream($output);
+                if ($value) {
+                    $value->serializeToJsonStream($output);
+                }
                 break;
             default:
                 user_error("Unsupported type.");
